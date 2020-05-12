@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+    <groupId>org.roghib</groupId>
+    <artifactId>master</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+    <name>Roghib</name>
+    <url>https://github.com/javaxe/master</url>
+    <description>Build anything with Roghib</description>
+    <organization>
+        <name>Roghib</name>
+        <url>https://www.roghib.org</url>
+    </organization>
+    <inceptionYear>2020</inceptionYear>
+    
+    <developers>
+        <developer>
+            <id>roghib</id>
+            <name>Roghib</name>
+            <organization>Roghib</organization>
+            <email>master@roghib.org</email>
+        </developer>
+    </developers>
+    
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
+        </license>
+    </licenses>
+    
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/roghib/javaxe/issues</url>
+    </issueManagement>
+    <scm>
+        <connection>scm:git:git@github.com:javaxe/master.git</connection>
+        <developerConnection>scm:git:git@github.com:javaxe/master.git</developerConnection>
+        <url>https://github.com/javaxe/master/tree/master</url>
+    </scm>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
